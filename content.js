@@ -80,7 +80,7 @@ function gotMessage(message, sender, sendResponse){
 	if(message.text == "bar says monitor" && !x){
 		monitor();
 		chrome.storage.sync.get('monitorInterval',function(data){
-			var monitorInterval = parseInt(data.monitorInterval);
+			var monitorInterval = parseFloat(data.monitorInterval);
 			monitorInterval *= 1000;
 			console.log("interval is: "+monitorInterval);
 			x = setInterval(monitor,monitorInterval);

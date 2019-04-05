@@ -16,6 +16,20 @@
 //  *this means UNSORTED page could cause false negatives (e.i "under90" is in 2nd page)
 */
 
+
+let myNotificationIDs = {};
+let snoozeCount = 0;
+let snoozeIDs = {}//will act as a dictionary of snoozing tab.ids
+let allTimes; //will be the <time>[] mentioned at logic section above
+let tabId; //
+let snoozeTime //from options page
+
+/*----flags:----*/
+let noUnder90Mins; 
+let noUnderDay;
+let firstNotification = true;
+/*--endOfFlags--*/
+
 //chrome notifications options
 let notificationOptions = {
     type: "basic",
@@ -26,25 +40,15 @@ let notificationOptions = {
             title: "Get List",
             iconUrl: "mainIcon.png"
         }, {
-            title: "Snooze 15m",
+            title: "Snooze",
         }]
 };
+
 let _message = {
     text:"",
     tabID:"",
     numOfTickets:5
 };
-let myNotificationIDs = {};
-let snoozeCount = 0;
-let snoozeIDs = {}//will act as a dictionary of snoozing tab.ids
-let allTimes; //will be the <time>[] mentioned at logic section above
-let tabId; //
-
-/*----flags:----*/
-let noUnder90Mins; 
-let noUnderDay;
-let firstNotification = true;
-/*--endOfFlags--*/
 
 /*Functions*/
 
@@ -87,8 +91,14 @@ function buttonsClick(notifId, btnIdx){
             chrome.tabs.sendMessage(parseInt(notifId),_message);
         }
         else if(btnIdx == 1){//snooze 15 btn
-            snoozeIDs[notifId] = 90;
-            chrome.notifications.clear(notifId);
+            chrome.storage.sync.get('snoozeTime',function(data){
+                if(data.snoozeTime){ snoozeTime = data.snoozeTime; }
+                else{ snoozeTime = 15; }
+                snoozeTime = parseFloat(snoozeTime) * 1000 * 60;//ms to minute
+                snoozeIDs[notifId] = snoozeTime;
+                setTimeout(function(){delete snoozeIDs[notifId];},snoozeTime)
+                chrome.notifications.clear(notifId);
+            })
         }
     }
 }
@@ -158,7 +168,7 @@ function messageHandler(message, sender, sendResponse){
         if(isSnoozing(senderId)){ 
             if(snoozeIDs[senderId]>0)
             {
-                snoozeIDs[senderId] -=1;
+                //snoozeIDs[senderId] -=1;
                 if(snoozeIDs[senderId] == 0){ delete snoozeIDs[senderId];}
             }
             return 0;
@@ -185,7 +195,7 @@ function messageHandler(message, sender, sendResponse){
 
 function notifyAboutPriority(message){
     if(isSnoozing("setPriority")){
-        snoozeIDs["setPriority"] -=1;
+        //snoozeIDs["setPriority"] -=1;
         if(snoozeIDs["setPriority"] <= 0){ delete snoozeIDs["setPriority"];}
         return;
     }
