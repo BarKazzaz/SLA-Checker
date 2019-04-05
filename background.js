@@ -33,7 +33,7 @@ let firstNotification = true;
 //chrome notifications options
 let notificationOptions = {
     type: "basic",
-    iconUrl: "icon.png",
+    iconUrl: "/images/smiley.png",
     title: "SLA Checker",
     message: "Bar the creator",
     buttons: [{
@@ -201,7 +201,7 @@ function notifyAboutPriority(message){
     }
     chrome.notifications.create("setPriority",{
         type: "basic",
-        iconUrl: "priority.png",
+        iconUrl: "/images/priority.png",
         title: "Set Priority",
         message: "New ticket/s in priority view"
     },function(){

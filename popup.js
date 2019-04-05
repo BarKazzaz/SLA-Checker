@@ -69,8 +69,8 @@ function toggleMute(){
 	chrome.storage.sync.get('mute',function(data){
 		muteBool = !data.mute;
 		chrome.storage.sync.set({'mute': muteBool},function(){
-			if(muteBool){document.getElementById("muteBtn").src = 'muteX.png';}
-			else{document.getElementById("muteBtn").src = 'volume.png';}
+			if(muteBool){document.getElementById("muteBtn").src = '/images/muteX.png';}
+			else{document.getElementById("muteBtn").src = '/images/volume.png';}
 		});
 	});
 }
@@ -108,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
   chrome.storage.sync.get('mute',function(data){
 	  muteBool = data.mute;
-	  if(muteBool) { document.getElementById("muteBtn").src = "muteX.png";}
-	  else{document.getElementById("muteBtn").src = "volume.png";}
+	  if(muteBool) { document.getElementById("muteBtn").src = "/images/muteX.png";}
+	  else{document.getElementById("muteBtn").src = "/images/volume.png";}
   });
 });
 /*endOfmain()*/
