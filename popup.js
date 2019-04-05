@@ -88,6 +88,10 @@ function stopMonitoring(){
   msg.text = "bar says stop";
   chrome.tabs.query(params,messageTab);
 }
+
+function showFeatureDescription(){
+  (this).innerText = "RightClick icon -> Options";
+}
 /*endOfFunctions*/
 
 /*main()*/
@@ -96,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById("stopMonitorBtn").addEventListener("click",stopMonitoring);
   document.getElementById("1stTierMonitorBtn").addEventListener("click",monitor1stTier);
   document.getElementById("monitorPriorityBtn").addEventListener("click",toggleMonitorPriority);
+  document.getElementById("newFeature").addEventListener("click",showFeatureDescription);
   document.getElementById("muteBtn").addEventListener("click",toggleMute);
   document.getElementById("muteBtn").style.cursor = "pointer";
   
