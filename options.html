@@ -7,10 +7,35 @@
     </head>
     <body>
         <h1>SLA Checker Options</h1>
-        <h2>Monitor Inverval <input type= "text" id="monitorInterval" size="4"style="text-align:right"> <small>seconds</small></h2>
-        <input type="submit" id="saveMonitorInterval" value="save interval">
-        <h2>Snooze Button Time <input type= "text" id="snoozeTime" size="4"style="text-align:right"> <small>minutes</small></h2>
-        <input type="submit" id="saveSnoozeTime" value="save snooze">
-        
+        <h2>Monitor Inverval <input type= "text" id="monitorInterval" size="4"style="text-align:right"> 
+            <small>seconds</small>
+            <input type="submit" id="saveMonitorInterval" value="save interval">
+        </h2>
+        <h2>Snooze Button Time <input type= "text" id="snoozeTime" size="4"style="text-align:right"> 
+            <small>minutes</small>
+            <input type="submit" id="saveSnoozeTime" value="save snooze">
+        </h2>
     </body>
+
+    <style>
+        body{
+            background-image: url('/images/optionsBackground.jpg');
+        }
+        h1{
+            text-align: center;
+            color:red;
+        }
+        h2{
+            text-align: center;
+            color:rgb(250, 184, 42);
+            text-shadow: 1px 2px red;
+        }
+        input[type=submit]{
+            margin-left: 1%;
+            background-color: rgb(250, 184, 42);
+        }
+        small{
+            font-size: 50%;
+        }
+    </style>
 </html>
