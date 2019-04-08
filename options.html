@@ -4,41 +4,103 @@
         <title>SLA Checker</title>
         <script src="jquery-3.3.1.min.js"></script>
         <script src="options.js"></script>
+        <style>
+            body{
+                background-image: url('/images/optionsBackground.jpg');
+            }
+            h1{
+                margin-top:5%;
+                font-size: 5em;
+                text-align: center;
+                color:red;
+                text-shadow: 1px 2px rgb(250, 184, 42);
+            }
+            #contentContainer{
+                width: 70%;
+                margin-left: 25%;
+            }
+            #contentContainer h2{
+                text-align: center;
+                color:rgb(250, 184, 42);
+                text-shadow: 1px 2px red;
+            }
+            input[type=submit]{
+                margin-left: 1%;
+                background-color: rgb(250, 184, 42);
+            }
+            input#tierOneLink{
+                width: 25em;
+            }
+            small{
+                font-size: 50%;
+            }
+            #navBar{
+                top: 0%;
+                z-index: 0;
+                width: 20%;
+                height: 100%;
+                background-color: rgba(37, 37, 37,0.9);
+                position: fixed;
+                left: 0%;
+            }
+            #navTitle{
+                margin-top: 10%;
+            }
+            #navTitle h2{
+                text-align: center;
+                color: antiquewhite;
+            }
+            #toggleBtn{
+                position: fixed;
+                z-index: 1;
+                top: 0%;
+                padding-top: 0%;
+                display: inline;
+                cursor: pointer;
+                background-color: rgba(80, 80, 80, 0.5);
+                font-size: 3em;
+                text-align: center;
+                color: white;
+            }
+            #navLinksContainer{
+                margin: 5%;
+                width: 85%;
+                background-color: rgba(50, 50, 50, 0);
+            }
+            .navLink{
+                background-color: rgba(60, 60, 60, 0.3);
+            }
+            .navLink:hover{
+                cursor: pointer;
+                background-color: cornflowerblue;
+            }
+            .navLink h3{
+                color:antiquewhite;
+                margin-top: 0%;
+                margin-bottom: 0%;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        <h1>SLA Checker</h1>
-        <h2>Monitor Interval <input type= "text" id="monitorInterval" size="4"style="text-align:right"> 
-            <small>seconds</small>
-            <input type="submit" id="saveMonitorInterval" value="save interval">
-        </h2>
-        <h2>Snooze Button Time <input type= "text" id="snoozeTime" size="4"style="text-align:right"> 
-            <small>minutes</small>
-            <input type="submit" id="saveSnoozeTime" value="save snooze">
-        </h2>
+        <div id="toggleBtn">=</div>
+        <nav id="navBar">
+            <div id="navTitle">
+                <h2>Features</h2>
+            </div>
+            <div id="navLinksContainer">
+                <div class="navLink" data-target="documentation">
+                    <h3 >Documentation</h3>
+                </div>
+                <div class="navLink" data-target="modify">
+                    <h3>Options</h3>
+                </div>
+                <div class="navLink" data-target="about">
+                    <h3>About</h3>
+                </div>
+            </div>
+        </nav>
+        <div id="contentContainer">
+        </div>
     </body>
-
-    <style>
-        body{
-            background-image: url('/images/optionsBackground.jpg');
-        }
-        h1{
-            margin-top:5%;
-            font-size: 5em;
-            text-align: center;
-            color:red;
-            text-shadow: 1px 2px rgb(250, 184, 42);
-        }
-        h2{
-            text-align: center;
-            color:rgb(250, 184, 42);
-            text-shadow: 1px 2px red;
-        }
-        input[type=submit]{
-            margin-left: 1%;
-            background-color: rgb(250, 184, 42);
-        }
-        small{
-            font-size: 50%;
-        }
-    </style>
 </html>

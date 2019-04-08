@@ -90,7 +90,7 @@ function stopMonitoring(){
 }
 
 function showFeatureDescription(){
-  (this).innerText = "RightClick icon -> Options";
+  chrome.tabs.create({'url':'/options.html'})
 }
 /*endOfFunctions*/
 
