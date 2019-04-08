@@ -8,7 +8,8 @@ let msg = {
 let monitorPriority;
 let muteBool;
 let priorityBtn;
-const tier1URL = "https://incapsula.zendesk.com/agent/filters/30529877";
+const DEFAULT_TIER_ONE_LINK = 'https://incapsula.zendesk.com/agent/filters/30529877';
+var tierOneLink = "https://incapsula.zendesk.com/agent/filters/30529877";
 const tier2URL = "https://incapsula.zendesk.com/agent/filters/37806740";
 
 //chrome.create properties
@@ -40,7 +41,7 @@ function messageBackground(tabs){
 
 //this creates tier1 pinned tab and sends message to background.js
 function monitor1stTier(){
-  createProperties.url = tier1URL;
+  createProperties.url = tierOneLink;
   chrome.tabs.create(createProperties,function(tab){
     msg.text = "bar says monitor";
     msg.tabID = tab.id;
@@ -116,5 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	  if(muteBool) { document.getElementById("muteBtn").src = "/images/muteX.png";}
 	  else{document.getElementById("muteBtn").src = "/images/volume.png";}
   });
+
+  chrome.storage.sync.get('tierOneLink',function(data){
+    if(data.tierOneLink){tierOneLink = data.tierOneLink;}
+    else{tierOneLink = DEFAULT_TIER_ONE_LINK;}
+  })
 });
 /*endOfmain()*/

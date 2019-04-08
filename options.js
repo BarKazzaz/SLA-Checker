@@ -28,13 +28,15 @@ $(function(){
         $('#saveSnoozeTime').click(function(){
             snoozeTime = $('#snoozeTime').val();
             chrome.storage.sync.set({'snoozeTime':snoozeTime},function(){
+                console.log(snoozeTime);
                 //close();
             })
         })
 
-        $('#save1stTierLink').click(function(){
-            tierOneLink = $('tierOneLink').val();
+        $('#saveTierOneLink').click(function(){
+            tierOneLink = $('#tierOneLink').val();
             chrome.storage.sync.set({'tierOneLink':tierOneLink},function(){
+                console.log(tierOneLink);
                 //close();
             })
         })
