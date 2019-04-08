@@ -4,15 +4,72 @@
         font-size: 3em;
     }
     li{
-        color:white;
+        color:orange;
         font-size: 0.5em;
+        text-shadow: 0.07em 0.07em black;
+    }
+    li p{
+        font-size: 0.7em;
+        color:white;
+        margin-left: 5%;
+        /*background-color: rgba(73, 66, 66, 0.336);*/
+    }
+    li img{
+        background-color: white;
+        height: 30px;
+        width: 30px;
     }
 </style>
-<h1>documentation</h1>
-<ul id="featuresList">Features
-    <li>Monitor 1st Tier</li>
-    <li>Monitor This Queue</li>
-    <li>Stop Monitoring This Queue</li>
-    <li>Monitor Priority</li>
-    <li>Mute</li>
+<h1>Documentation</h1>
+<ul id="featuresList">
+    <li>
+        Monitor 1st Tier:
+        <div>
+            <p>
+                Clicking on "Monitor 1st tier queue" will create a new pinned tab
+                 which will be monitored in the background.
+                <br>Once a ticket in that queue has 90 minutes or less according to SLA you will be notified.
+            </p>
+        </div>
+    </li>
+    <li>
+        Monitor This Queue
+        <div>
+            <p>
+                Clicking on "Monitor this queue" will duplicate current tab
+                 to a new pinned tab which will be monitored in the background.
+                <br>Once a ticket in that queue has 90 minutes or less according to SLA you will be notified.
+                <br>Pleaes make sure you are viewing a queue in order to use this functionality.
+            </p>
+        </div>
+    </li>
+    <li>Stop Monitoring This Queue
+        <div>
+            <p>
+                Clicking on "Stop monitoring this queue" will disable monitoring for the specific tab you are on.
+                <br>There is no "Enable" button, so if you regret stopping you may use "Monitor this queue"
+                 and have a duplicate created.
+            </p>
+        </div>
+    </li>
+    <li>
+        Monitor Priority
+        <div>
+            <p>
+                "Monitor Priority" is a toggle button.
+                <br>When active (green background) you will get notified when there are tickets in priority queue.
+                <br>You have to monitor a queue to use this addon.
+            </p>
+        </div>
+    </li>
+    <li>
+        Mute
+        <div>
+                <p>
+                    "Mute" is a toggle button.
+                    <br>When active <img src="/images/volume.png"> notifications will have a sound effect.
+                    <br>When muted <img src="/images/muteX.png"> notifications will be silent.
+                </p>
+            </div>
+    </li>
 </ul>

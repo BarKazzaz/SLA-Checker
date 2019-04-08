@@ -50,5 +50,5 @@ $(function(){
         console.log(target);
         container.load(target + '.html',setListeners);
     })
-    $('#contentContainer').load('documentation.html');
+    $('#contentContainer').load('modify.html',setListeners);
 })
