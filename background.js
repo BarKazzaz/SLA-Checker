@@ -105,7 +105,10 @@ function buttonsClick(notifId, btnIdx){
 
 function snoozePerTab(notificationId){
     chrome.notifications.clear(notificationId);
-    snoozeIDs[notificationId] = 30;
+    snoozeIDs[notificationId] = 1;
+    setTimeout(function(){
+        delete snoozeIDs[notificationId]
+    },300000) //300,000ms is 5min
 }
 
 function getTimesFromContentPage(message, senderId){
@@ -195,8 +198,6 @@ function messageHandler(message, sender, sendResponse){
 
 function notifyAboutPriority(message){
     if(isSnoozing("setPriority")){
-        //snoozeIDs["setPriority"] -=1;
-        if(snoozeIDs["setPriority"] <= 0){ delete snoozeIDs["setPriority"];}
         return;
     }
     chrome.notifications.create("setPriority",{
