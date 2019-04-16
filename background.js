@@ -142,7 +142,7 @@ function getTimesFromContentPage(message, senderId){
         console.log("creating notification");
         chrome.notifications.create(""+senderId,notificationOptions, addToMyNotificationIDs);
         soundNotify('CuckooClock.wav');
-        setTimeout(function(){chrome.notifications.clear(""+senderId, removeFromMyNotificationIDs);},5000);
+        setTimeout(function(){chrome.notifications.clear(""+senderId, removeFromMyNotificationIDs);},10000);
     }
     /*(4)"tickets" from content.js : message which is received after pressing "get tickets" notification button*/
     if(message.text == "tickets"){
@@ -209,7 +209,7 @@ function notifyAboutPriority(message){
         console.log("priority notification created");
     });
     soundNotify('DoorBell.wav');
-    setTimeout(function(){chrome.notifications.clear("setPriority");},5000);
+    setTimeout(function(){chrome.notifications.clear("setPriority");},10000);
 }
 
 function getTicketsMessageListener(message){
