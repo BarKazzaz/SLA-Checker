@@ -79,15 +79,9 @@ function gotMessage(message, sender, sendResponse){
 	console.log(message.text);
 	if(message.text == "bar says monitor" && !x){
 		monitor();
-		chrome.storage.sync.get('monitorInterval',function(data){
-			var monitorInterval = parseFloat(data.monitorInterval);
-			monitorInterval *= 1000;
-			console.log("interval is: "+monitorInterval);
-			x = setInterval(monitor,monitorInterval);
-		})
 	}else if(message.text == "bar says stop"){
-		clearInterval(x);
-		x = false;
+		//
+		if(x){ clearTimeout(x); }
 		console.log("SLA Checker disabled");
 	}else if(message.text == "bar wants tickets"){
 		getTickets(message.numOfTickets);
@@ -151,18 +145,16 @@ function checkPriorityQueue(){
 }
 
 function monitor(){
-	chrome.storage.sync.get('monitorPriority', function(data) {
+	chrome.storage.sync.get(['monitorPriority','monitorInterval'], function(data) {
 		var monitorPriority = data.monitorPriority;
-		if(monitorPriority){ 
-			checkPriorityQueue();
-		}
-		else{ console.log("NOT monitoring priority");}
+		var monitorInterval = parseFloat(data.monitorInterval);
+		monitorInterval *= 1000;
+
+		if(monitorPriority){ checkPriorityQueue(); }
+		if (!isSorted()) { sortQueue(); }
+		else{ setAtllTimes(sendToBackground); }
+		x = setTimeout(monitor,monitorInterval);
 	});
-	if(!isSorted()) { 
-		sortQueue();
-	}else{
-		setAtllTimes(sendToBackground);
-	}
 }
 
 /*---------main()---------*/

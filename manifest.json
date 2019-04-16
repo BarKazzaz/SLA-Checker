@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "SLA checker",
-	"version":"2.1.6",
+	"version":"2.1.7",
 	"description": "This allows to monitor for Zendesk tickets neer SLA breach. Created by Bar Kazzaz",
 	"permissions": [
           "tabs",
