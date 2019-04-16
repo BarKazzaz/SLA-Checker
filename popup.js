@@ -90,8 +90,13 @@ function stopMonitoring(){
   chrome.tabs.query(params,messageTab);
 }
 
+function goToOptionsPage(){
+  chrome.tabs.create({'url':'/options.html'});
+}
+
 function showFeatureDescription(){
-  chrome.tabs.create({'url':'/options.html'})
+  document.getElementById('theFeatures').style.display = 'block';
+  document.getElementById('newFeature').style.display = 'none';
 }
 /*endOfFunctions*/
 
@@ -101,6 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById("stopMonitorBtn").addEventListener("click",stopMonitoring);
   document.getElementById("1stTierMonitorBtn").addEventListener("click",monitor1stTier);
   document.getElementById("monitorPriorityBtn").addEventListener("click",toggleMonitorPriority);
+  document.getElementById("settingsBtn").addEventListener("click",goToOptionsPage);
   document.getElementById("newFeature").addEventListener("click",showFeatureDescription);
   document.getElementById("muteBtn").addEventListener("click",toggleMute);
   document.getElementById("muteBtn").style.cursor = "pointer";

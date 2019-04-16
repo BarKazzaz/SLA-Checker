@@ -46,6 +46,11 @@
         #newFeature{
           cursor: pointer;
         }
+        #settingsBtn:hover{
+          cursor: pointer;
+          background-color: rgba(0,200,0,0.1);
+          border-radius: 50%;
+        }
         #newFeature p{
           text-align: center;
           color:burlywood;
@@ -64,6 +69,12 @@
           animation-delay: 0.5s;
           animation-iteration-count: infinite;
           animation-direction:normal;
+        }
+        #theFeatures{
+          display: none;
+          /*text-align: center;*/
+          color:burlywood;
+          text-shadow: 1px 2px black;
         }
         @keyframes sparkAnimation{
           0%{
@@ -108,10 +119,23 @@
   </head>
   <body>
     <h1>SLA Checker</h1>
+    <div id="theFeatures">
+      <ul>
+         <li>Settings/Options page:
+           <ul>
+              <li>Monitor interval adjustment</li>
+              <li>Snooze time adjustment</li>
+              <li>Some documentation on how to use the tool</li>
+              <li>About page</li>
+           </ul>
+         </li>
+      </ul>
+    </div>
     <div id="newFeature">
       <div id="sparkLight"></div>
       <p>new features</p>
     </div>
+    <img id="settingsBtn" src="/images/settings.png" height="42" width="42">
     <img id="muteBtn" src="/images/volume.png" alt="Mute" height="42" width="42">
     <br>
     <button id="1stTierMonitorBtn">Monitor 1st tier queue</button>
