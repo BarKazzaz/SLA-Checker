@@ -5,108 +5,126 @@
  value "popup.html".
  -->
 <html>
-  <head>
-    <script src="popup.js"></script>
+
+<head>
     <style>
-      body {
-        width: 500px;
-        background-color: grey;
-        background-image: url("magical-background.jpg");
-        background-size: cover; 
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text ............*/
-        background-color:#D7F5F6;
-        white-space: normal;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-      h1 { 
-        color: black;
-        font-family: 'Raleway',sans-serif;
-        font-size: 42px;
-        font-weight: 800;
-        line-height: 72px;
-        margin: 0 0 24px;
-        text-align: center;
-        text-transform: uppercase;
+        body {
+            width: 500px;
+            background-color: grey;
+            background-image: url("magical-background.jpg");
+            background-size: cover;
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            font-size: 100%;
         }
-      button {
-        width: 400px;
-        margin-left: 10%;
-        background-color: #7ea8fc;
-        text-align: center;
-        font-size: 24px;
-        border-radius: 12px;
-        outline: none;
+        
+        #status {
+            /* avoid an excessively wide status text ............*/
+            background-color: #D7F5F6;
+            white-space: normal;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 400px;
         }
-        #newFeature{
-          cursor: pointer;
+        
+        h1 {
+            color: black;
+            font-family: 'Raleway', sans-serif;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 72px;
+            margin: 0 0 24px;
+            text-align: center;
+            text-transform: uppercase;
         }
-        #settingsBtn:hover{
-          cursor: pointer;
-          background-color: rgba(0,200,0,0.1);
-          border-radius: 50%;
+        
+        button {
+            width: 400px;
+            margin-left: 10%;
+            background-color: #7ea8fc;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 12px;
+            outline: none;
         }
-        #newFeature p{
-          text-align: center;
-          color:burlywood;
-          text-shadow: 1px 2px black;
+        
+        #newFeature {
+            cursor: pointer;
         }
-        #newFeature #sparkLight{
-          position: absolute;
-          margin-top: 20px;
-          height: 5px;
-          width: 5px;
-          border-radius: 50%;
-          opacity: 0;
-          background-color: white;
-          animation-name: sparkAnimation;
-          animation-duration: 5s;
-          animation-delay: 0.5s;
-          animation-iteration-count: infinite;
-          animation-direction:normal;
+        
+        #settingsBtn {
+            height: 32px;
+            width: 32px;
         }
-        #theFeatures{
-          display: none;
-          /*text-align: center;*/
-          color:burlywood;
-          text-shadow: 1px 2px black;
+        
+        #settingsBtn:hover {
+            cursor: pointer;
+            background-color: rgba(0, 200, 0, 0.1);
+            border-radius: 50%;
         }
-        @keyframes sparkAnimation{
-          0%{
-            opacity: 1;
-            left: 40%;
-            bottom: 60%;
-            box-shadow: 0px 0px 40px 20px rgba(1, 0, 0, 0);
-          }
-          25%{
-            opacity: 1;
-            left: 60%;
-            bottom: 60%;
-            box-shadow: 0px 0px 40px 20px white;
-          }
-          50%{
-            opacity: 1;
-            left: 60%;
-            bottom: 68%;
-            box-shadow: 0px 0px 40px 20px white;
-          }
-          75%{
-            opacity: 1;
-            left: 40%;
-            bottom: 68%;
-            box-shadow: 0px 0px 40px 20px white;
-          }
-          100%{
-            opacity: 1;
-            left: 40%;
-            bottom: 60%;
-            box-shadow: 0px 0px 40px 20px rgba(1, 0, 0, 0);
-          }
+        
+        #newFeature p {
+            text-align: center;
+            color: burlywood;
+            text-shadow: 1px 2px black;
+        }
+        
+        #newFeature #sparkLight {
+            position: absolute;
+            margin-top: 20px;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            opacity: 0;
+            background-color: white;
+            animation-name: sparkAnimation;
+            animation-duration: 5s;
+            animation-delay: 0.5s;
+            animation-iteration-count: infinite;
+            animation-direction: normal;
+        }
+        
+        #theFeatures {
+            display: none;
+            /*text-align: center;*/
+            color: burlywood;
+            text-shadow: 1px 2px black;
+        }
+        
+        #volumeHolder {
+            display: inline;
+        }
+        
+        @keyframes sparkAnimation {
+            0% {
+                opacity: 1;
+                left: 40%;
+                bottom: 60%;
+                box-shadow: 0px 0px 40px 20px rgba(1, 0, 0, 0);
+            }
+            25% {
+                opacity: 1;
+                left: 60%;
+                bottom: 60%;
+                box-shadow: 0px 0px 40px 20px white;
+            }
+            50% {
+                opacity: 1;
+                left: 60%;
+                bottom: 68%;
+                box-shadow: 0px 0px 40px 20px white;
+            }
+            75% {
+                opacity: 1;
+                left: 40%;
+                bottom: 68%;
+                box-shadow: 0px 0px 40px 20px white;
+            }
+            100% {
+                opacity: 1;
+                left: 40%;
+                bottom: 60%;
+                box-shadow: 0px 0px 40px 20px rgba(1, 0, 0, 0);
+            }
         }
     </style>
 
@@ -116,32 +134,36 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>SLA Checker</h1>
     <div id="theFeatures">
-      <ul>
-         <li>Settings/Options page:
-           <ul>
-              <li>Monitor interval adjustment</li>
-              <li>Snooze time adjustment</li>
-              <li>Some documentation on how to use the tool</li>
-              <li>About page</li>
-           </ul>
-         </li>
-      </ul>
+        <ul>
+            <li>Settings/Options page:
+                <ul>
+                    <li>Monitor interval adjustment</li>
+                    <li>Snooze time adjustment</li>
+                    <li>Some documentation on how to use the tool</li>
+                    <li>About page</li>
+                </ul>
+            </li>
+        </ul>
     </div>
     <div id="newFeature">
-      <div id="sparkLight"></div>
-      <p>new features</p>
+        <div id="sparkLight"></div>
+        <p>new features</p>
     </div>
     <img id="settingsBtn" src="/images/settings.png" height="42" width="42">
     <img id="muteBtn" src="/images/volume.png" alt="Mute" height="42" width="42">
-    <br>
+    <div id="volumeHolder">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myVol">
+    </div>
     <button id="1stTierMonitorBtn">Monitor 1st tier queue</button>
     <button id="monitorBtn">Monitor this queue</button>
     <button id="stopMonitorBtn">Stop monitoring this queue</button>
     <button id="monitorPriorityBtn">Monitor priority</button>
-  </body>
-</html>
+    <script src="popup.js"></script>
+</body>
 
+</html>

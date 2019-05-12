@@ -1,35 +1,33 @@
 {
-	"manifest_version": 2,
-	"name": "SLA checker",
-	"version":"2.1.8",
-	"description": "This allows to monitor for Zendesk tickets neer SLA breach. Created by Bar Kazzaz",
-	"permissions": [
-          "tabs",
-          "contextMenus",
-          "notifications",
-          "storage"
+    "manifest_version": 2,
+    "name": "SLA checker",
+    "version": "2.1.9",
+    "description": "This allows to monitor for Zendesk tickets neer SLA breach. Created by Bar Kazzaz",
+    "permissions": [
+        "tabs",
+        "contextMenus",
+        "notifications",
+        "storage"
+    ],
+    "web_accessible_resources": [
+        "icon.png"
+    ],
+    "icons": {
+        "128": "mainIcon.png"
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://incapsula.zendesk.com/*"
         ],
-	"web_accessible_resources": [
-    "icon.png"
-  ],
-	"icons":{
-		"128":"mainIcon.png"
-	},
-	"content_scripts": [
-		{
-			"matches":[
-				"https://incapsula.zendesk.com/*"
-			],
-			"js": ["content.js"]
-		}
-	],
-	"background":{
-		"scripts":["background.js"]
-	},
-	"browser_action": {
-		"default_popup": "popup.html",
-		"default_title": "SLA Checker"
-	},
-	"options_page": "options.html",
-	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+        "js": ["content.js"]
+    }],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "SLA Checker"
+    },
+    "options_page": "options.html",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
